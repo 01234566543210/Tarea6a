@@ -1,0 +1,248 @@
+EJERCICIO 1
+
+read -p "¿Qué edad tienes?" edad
+echo "La edad introducida es $edad"
+
+read -p "¿Qué edad tiene tu herman@?" edad2
+
+if [ $edad -gt $edad2 ]
+then
+echo "Tu eres el mayor de los dos hermanos"
+
+else if [ $edad -lt $edad2 ] 
+then
+echo " Tu herman@ es el/la mayor de los dos"
+
+else if [ $edad -eq $edad2 ]
+then 
+echo "Sois gemelos o mellizos"
+fi
+fi
+
+
+
+EJERCICIO 2
+
+read -p "Escribe un numero mayor que cero:" numero
+
+
+ME HA FALTADO EL WHILE
+while [ $numero -le 0 ] 
+do
+read -p "Introduce un valor mayor que 0."
+done
+
+if [ $numero -gt 0 ] 
+then 
+
+    resultado=`expr $numero % 2`
+
+if [ $resultado -eq 0 ]
+
+    then
+        echo "El numero es par"
+    else
+        echo "El numero es impar"
+    
+    fi
+    
+else 
+    echo "El numero no es correcto, vuelve a eecutar el escript"
+fi
+
+
+EJERCICIO 3
+
+
+read -p "Introduce tu calificacion: " calificacion
+
+ME HA FALTADO EL WHILE
+while [ $calificacion -le 0 ] || [ $calificacion -gt 10 ]
+do 
+read -p "Introduce una calificacion de 0 a 10"
+done
+
+
+if [ $calificacion -lt 5 ]
+then
+echo "suspendido"
+
+else if [ $calificacion -eq 5 ]
+then
+echo "aprobado"
+
+else if [ $calificacion -eq 6 ]
+then
+echo "bien"
+
+else if [ $calificacion -eq 7 ]
+then
+echo "notable"
+
+else if [ $calificacion -eq 8 ]
+then
+echo "notable"
+
+else if [ $calificacion -eq 10 ]
+then
+echo "sobresaliente"
+
+else 
+echo "Vuelve a ejecutar el script con un numero valido"
+
+fi
+fi
+fi
+fi
+fi
+fi
+
+
+EJERCICIO 4
+
+read -p "Escribe un numero:" numero
+
+ME HA FALTADO EL WHILE:
+while [ $nimero -le 0 ]
+do 
+read -p "Introduce un valor mayor que 0."
+done
+
+if [ $numero -gt 0 ]
+then 
+
+for i in `seq 0 $numero`; do
+echo "valor $i"
+done
+
+else 
+echo "El valor introducido no es correcto"
+
+fi
+
+
+EJERCICIO 5
+
+read -p "Escribe un numero, utiliza 0 para sumarlo todo:" numero
+contador=0
+
+while [ $numero -ne 0 ]
+do 
+sumatorio=`expr $sumatorio + $numero`
+contador=`expr $contador + 1`
+
+read -p "Escribe un numero, utiliza 0 para sumarlo todo:" numero
+
+done 
+
+AQUI TENIA UN IF QUE NO HACIA FALTA
+
+media=$(echo "scale=2; $sumatorio/$contador" | bc)
+ 
+echo "$sumatorio y $media"
+
+
+
+
+EJERCICIO 6
+
+read -p "Cantidad de litros de agua que consumes:" litros
+
+if [ $litros -le 50 ]
+then
+rango1=`expr 2000 \* $litros / 50`
+echo "$rango1"
+
+else if [ $litros -gt 51 -a $litros -le 200 ]
+then
+rango2=`expr 20 \* \( $litros - 50 \) + 2000`
+echo "$rango2"
+
+else if [ $litros -ge 201 ]
+then
+rango3=`expr 10 \* \( $litros - 50 \) + 2000`
+echo "$rango3"
+
+fi
+fi
+fi
+
+
+EJERCICIO 7:
+
+read -p "Escribe un número del 1 al 30:"  numero
+
+if [ $numero -ge 1 -a $numero -le 30 ]
+then
+
+
+if [ $numero -gt 7 -a $numero -le 14 ]
+then
+resultado=`expr $numero - 7`
+
+
+else if [ $numero -gt 14 -a $numero -le 21 ]
+then 
+resultado=`expr $numero - 14`
+
+
+else if [ $numero -gt 21 -a $numero -le 28 ]
+then 
+resultado=`expr $numero - 21`
+
+
+else if [ $numero -gt 28 -a $numero -le 30 ]
+then
+resultado=`expr $numero - 28`
+
+
+fi
+fi
+fi
+fi
+
+
+if [ $resultado -eq 1 ]
+then
+echo "lunes"
+
+else if [ $resultado -eq 2 ]
+then
+echo "martes"
+
+else if  [ $resultado -eq 3 ]
+then
+echo "miercoles"
+
+else if  [ $resultado -eq 4 ]
+then
+echo "jueves"
+
+else if  [ $resultado -eq 5 ]
+then
+echo "viernes"
+
+else if [ $resultado -eq 6 ]
+then
+echo "sabado"
+
+else if [ $resultado -eq 7 ]
+then
+echo "domingo"
+
+fi
+fi
+fi
+fi
+fi
+fi
+fi
+
+
+else
+echo "El numero no está dentro de rango."
+fi
+
+
+ME HAN COSTADO MUCHO DE HACER, SOBRE TODO EL 7.
+SALUDOS, ELENA
